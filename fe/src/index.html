@@ -12,6 +12,21 @@ article a {
 .card-tagline{
     text-align: center;
     padding: 1em;
+    font-size: 24px;
+    color: #36454F;
+}
+.card-image{
+    height: 250px;
+}
+.card-container{
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
+    justify-content: center;
+    box-shadow: 0 0 5px grey;
+}
+.card-button {
+    margin: 10px;
 }
 </style>
 
@@ -21,12 +36,13 @@ article a {
     <!-- id,gender,masterCategory,subCategory,articleType,baseColour,season,year,usage,productDisplayName -->
     <template x-for="product in products">
         
-        <article>
+        <article class="card-container">
             <a :href="'/product/?id=' + product.id">
                 <div class="grid">
-                    <img :src="window.fetchImageUrl(product.id)" alt="product image">
-                    <p class="card-tagline" x-text="product.productDisplayName"></p>
+                    <img class="card-image" :src="window.fetchImageUrl(product.id)" alt="product image">
+                    <h4 class="card-tagline" x-text="product.productDisplayName"></h4>
                 </div> 
+                <button class="card-button">Add to cart</button>
             </a>
         </article>
     </template>

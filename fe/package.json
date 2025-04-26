@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "build": "npx @11ty/eleventy --config=eleventy.config.js",
-    "dev": "ELEVENTY_ENV=development npx @11ty/eleventy --config=eleventy.config.js --serve",
+    "dev": "npx @11ty/eleventy --config=eleventy.config.js --serve",
     "production": "npx @11ty/eleventy --config=eleventy.config.js",
     "test": "NODE_NO_WARNINGS=1 node --experimental-vm-modules node_modules/jest/bin/jest.js",
     "testw": "NODE_NO_WARNINGS=1 node --experimental-vm-modules node_modules/jest/bin/jest.js --watch"
