@@ -3,3 +3,12 @@ layout: layouts/page.njk
 title: Product
 ---
 
+<script src="/assets/scripts/product.js"></script>
+
+<article x-data="{product: {}}" x-init="product = await window.getItemDetails(window.id)">
+    <!--id,gender,masterCategory,subCategory,articleType,baseColour,season,year,usage,productDisplayName`-->
+    <h3 x-text="product.productDisplayName">Product</h3>
+    <p x-text="product.year">
+
+
+</article>

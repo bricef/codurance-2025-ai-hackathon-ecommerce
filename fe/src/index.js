@@ -34,5 +34,9 @@ async function fetchImageUrl(id) {
   }
 window.fetchImageUrl = fetchImageUrl
 
+window.getDetails = (id) => {
+    
+}
+
 Alpine.start()
 

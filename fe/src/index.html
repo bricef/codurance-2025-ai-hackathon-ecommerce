@@ -22,7 +22,7 @@ article a {
     <template x-for="product in products">
         
         <article>
-            <a :href="'/product/' + product.id">
+            <a :href="'/product/?id=' + product.id">
                 <div class="grid">
                     <img :src="window.fetchImageUrl(product.id)" alt="product image">
                     <p class="card-tagline" x-text="product.productDisplayName"></p>
