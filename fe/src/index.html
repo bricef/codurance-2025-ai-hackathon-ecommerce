@@ -3,6 +3,8 @@ layout: layouts/page.njk
 title: Home
 ---
 
+<script src="/assets/scripts/home.js"></script>
+
 <style>
 article a {
     text-decoration: none  !important;
@@ -13,27 +15,16 @@ article a {
 }
 </style>
 
-<div class="grid">
-    <div></div>
-    <article>
-        <a href="/generators">        
-            <img src="/assets/img/smith-at-work.png" alt="">
-            <p class="card-tagline">Random Generators</p>
-        </a>
-    </article>
-    
-    <article>
-        <a href="/references">
-            <img src="/assets/img/reference-library.jpg" alt="">
-            <p class="card-tagline">Rules and Stats References</p>   
-        </a>
-    </article>
-    
-    <article>
-        <a href="/tools">
-           <img src="/assets/img/tool-chest.jpg" alt="">
-            <p class="card-tagline">Tools and Utilities</p>
-        </a>
-    </article>
-    <div></div>
+<div class="grid" style="" x-data="{ products: window.products }">
+
+
+    <!-- id,gender,masterCategory,subCategory,articleType,baseColour,season,year,usage,productDisplayName -->
+    <template x-for="product in products">
+        <article>
+            <a :href="'/product/' + product.id">
+                <!-- <img :src="product.image" alt=""> -->
+                <p class="card-tagline" x-text="product.productDisplayName"></p>
+            </a>
+        </article>
+    </template>
 </div>
