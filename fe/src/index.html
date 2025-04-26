@@ -20,10 +20,13 @@ article a {
 
     <!-- id,gender,masterCategory,subCategory,articleType,baseColour,season,year,usage,productDisplayName -->
     <template x-for="product in products">
+        
         <article>
             <a :href="'/product/' + product.id">
-                <!-- <img :src="product.image" alt=""> -->
-                <p class="card-tagline" x-text="product.productDisplayName"></p>
+                <div class="grid">
+                    <img :src="window.fetchImageUrl(product.id)" alt="product image">
+                    <p class="card-tagline" x-text="product.productDisplayName"></p>
+                </div> 
             </a>
         </article>
     </template>
