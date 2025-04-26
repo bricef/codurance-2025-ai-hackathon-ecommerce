@@ -1,0 +1,31 @@
+{
+  "name": "fe",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "build": "npx @11ty/eleventy --config=eleventy.config.js",
+    "dev": "ELEVENTY_ENV=development npx @11ty/eleventy --config=eleventy.config.js --serve",
+    "production": "npx @11ty/eleventy --config=eleventy.config.js",
+    "test": "NODE_NO_WARNINGS=1 node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "testw": "NODE_NO_WARNINGS=1 node --experimental-vm-modules node_modules/jest/bin/jest.js --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "@supabase/supabase-js": "^2.49.4",
+    "alpinejs": "^3.14.8",
+    "alpinejs-form-data": "^1.0.4",
+    "sass": "^1.83.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.24.2",
+    "jest": "^29.7.0"
+  },
+  "jest": {
+    "transform": {}
+  }
+}
