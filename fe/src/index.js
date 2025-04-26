@@ -18,6 +18,36 @@ async function fetchTestTable() {
 const products = fetchTestTable()
 window.products = products
 
+async function fetchAllImages() {
+    try {
+        const { data, error } = await supabase
+            .storage
+            .getBucket('images')
+        console.log(data)
+      if (error) {
+        throw error;
+      }
+    } catch (error) {
+      console.error('Error fetching images:', error);
+    }
+  }
+
+  async function fetchImageUrl(id) {
+    try {
+        const { data, error } = await supabase
+            .storage
+            .from('images')
+            .getPublicUrl(`${id}.png`)
+        console.log(data)
+      if (error) {
+        throw error;
+      }
+      return data
+    } catch (error) {
+      console.error('Error fetching images:', error);
+    }
+  }
+
 
 Alpine.start()
 
