@@ -10,7 +10,7 @@ import fs from 'node:fs';
 import * as esbuild from 'esbuild'
 
 const ENTRY_POINTS = {
-    // 'generators-index': './src/generators/index.js',
+    'product': './src/product/index.js',
     // 'initiative-index': './src/tools/tracker/index.js',
     // 'item-index': './src/generators/item/index.js',
     // 'music-index': './src/tools/music/index.js',
