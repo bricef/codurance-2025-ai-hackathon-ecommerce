@@ -37,14 +37,14 @@ async function fetchAllImages() {
         const { data, error } = await supabase
             .storage
             .from('images')
-            .getPublicUrl(`${id}.png`)
+            .getPublicUrl(`${id}.jpg`)
         console.log(data)
       if (error) {
         throw error;
       }
       return data
     } catch (error) {
-      console.error('Error fetching images:', error);
+      console.error(`Error fetching url for image ${id}.jpg:`, error);
     }
   }
 
